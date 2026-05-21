@@ -12,7 +12,7 @@ function GeneratePageInner() {
   const [form, setForm]       = useState({})
 
   useEffect(() => {
-    const match = document.cookie.match(/chu_user=([^;]+)/)
+    const match = document.cookie.match(/cha_user=([^;]+)/)
     if (match) {
       try { setUser(JSON.parse(decodeURIComponent(match[1]))) } catch(e) {}
     }
@@ -23,7 +23,7 @@ function GeneratePageInner() {
     setError('')
     setResult(null)
     try {
-      const token = document.cookie.match(/chu_token=([^;]+)/)?.[1] || ''
+      const token = document.cookie.match(/cha_token=([^;]+)/)?.[1] || ''
       const res = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
@@ -43,15 +43,15 @@ function GeneratePageInner() {
     <div style={{minHeight:'100vh',background:'#f8fafc',fontFamily:'Inter,sans-serif'}}>
       <nav style={{background:'#fff',borderBottom:'1px solid #e2e8f0',height:56,display:'flex',alignItems:'center',padding:'0 24px',gap:16}}>
         <Link href="/dashboard" style={{display:'flex',alignItems:'center',gap:8,textDecoration:'none'}}>
-          <div style={{width:26,height:26,borderRadius:6,background:'#0891b2',display:'flex',alignItems:'center',justifyContent:'center',fontSize:12,fontWeight:800,color:'#fff'}}>{{PRODUCT_NAME_INITIAL}}</div>
+          <div style={{width:26,height:26,borderRadius:6,background:'#0891b2',display:'flex',alignItems:'center',justifyContent:'center',fontSize:12,fontWeight:800,color:'#fff'}}>C</div>
           <span style={{fontWeight:700,color:'#0f172a',fontSize:14}}>ChurnShield</span>
         </Link>
         <div style={{flex:1}}/>
         {user && <Link href="/dashboard" style={{fontSize:13,color:'#64748b',textDecoration:'none'}}>Dashboard</Link>}
       </nav>
       <div style={{maxWidth:640,margin:'0 auto',padding:'40px 24px'}}>
-        <h1 style={{fontSize:26,fontWeight:800,color:'#0f172a',marginBottom:6}}>{{GENERATE_HEADLINE}}</h1>
-        <p style={{fontSize:14,color:'#64748b',marginBottom:28}}>{{GENERATE_SUBHEADLINE}}</p>
+        <h1 style={{fontSize:26,fontWeight:800,color:'#0f172a',marginBottom:6}}>Save a cancelling customer</h1>
+        <p style={{fontSize:14,color:'#64748b',marginBottom:28}}>Fill in the details and get a personalised retention strategy in seconds.</p>
 
         {error && <div style={{background:'#fef2f2',border:'1px solid #fecaca',borderRadius:10,padding:'12px 16px',fontSize:13,color:'#dc2626',marginBottom:20}}>{error}</div>}
 

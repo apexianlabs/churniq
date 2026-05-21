@@ -19,7 +19,7 @@ export default function DashboardPage() {
   }, [])
 
   useEffect(() => {
-    const match = document.cookie.match(/chu_user=([^;]+)/)
+    const match = document.cookie.match(/cha_user=([^;]+)/)
     if (!match) { router.push('/login'); return }
     try {
       const u = JSON.parse(decodeURIComponent(match[1]))
@@ -30,7 +30,7 @@ export default function DashboardPage() {
 
   const loadItems = async (userId) => {
     try {
-      const token = document.cookie.match(/chu_token=([^;]+)/)?.[1] || ''
+      const token = document.cookie.match(/cha_token=([^;]+)/)?.[1] || ''
       const res = await fetch(`/api/items?user_id=${userId}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       })
@@ -41,13 +41,13 @@ export default function DashboardPage() {
   }
 
   const handleLogout = () => {
-    document.cookie = 'chu_token=; path=/; max-age=0'
-    document.cookie = 'chu_user=; path=/; max-age=0'
+    document.cookie = 'cha_token=; path=/; max-age=0'
+    document.cookie = 'cha_user=; path=/; max-age=0'
     router.push('/login')
   }
 
   const getInitials = (u) => {
-    if (!u) return '{{PRODUCT_NAME_INITIAL}}{{PRODUCT_NAME_INITIAL}}'
+    if (!u) return 'CC'
     const name = u.name || u.email || ''
     const parts = name.trim().split(' ')
     if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase()
@@ -69,10 +69,10 @@ export default function DashboardPage() {
       {/* Logo */}
       <div style={{padding:'20px 16px 16px',borderBottom:'1px solid rgba(255,255,255,0.06)'}}>
         <Link href="/" style={{display:'flex',alignItems:'center',gap:9,textDecoration:'none'}}>
-          <div style={{width:28,height:28,borderRadius:7,background:'#0891b2',display:'flex',alignItems:'center',justifyContent:'center',fontSize:13,fontWeight:800,color:'#fff',flexShrink:0}}>{{PRODUCT_NAME_INITIAL}}</div>
+          <div style={{width:28,height:28,borderRadius:7,background:'#0891b2',display:'flex',alignItems:'center',justifyContent:'center',fontSize:13,fontWeight:800,color:'#fff',flexShrink:0}}>C</div>
           <div>
             <p style={{fontSize:13,fontWeight:800,color:'#fff',lineHeight:1,letterSpacing:'-0.3px'}}>ChurnShield</p>
-            <p style={{fontSize:10,color:'#475569',lineHeight:1,marginTop:2}}>{{PRODUCT_TAGLINE_SHORT}}</p>
+            <p style={{fontSize:10,color:'#475569',lineHeight:1,marginTop:2}}>Stop churn before it starts</p>
           </div>
         </Link>
       </div>

@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 const AI_API_URL = process.env.AI_API_URL
 const AI_API_KEY = process.env.AI_API_KEY
 const DB_API_URL = process.env.DB_API_URL
-const DB_API_KEY = process.env.{{DB_KEY}}
+const DB_API_KEY = process.env.DB_API_KEY_CHURNSHIELD
 
 export async function POST(request) {
   try {
@@ -14,7 +14,7 @@ export async function POST(request) {
     const aiRes = await fetch(`${AI_API_URL}/api/process`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${AI_API_KEY}` },
-      body: JSON.stringify({ task: '{{AI_TASK}}', inputs })
+      body: JSON.stringify({ task: 'generate_retention_response', inputs })
     })
     const aiData = await aiRes.json()
     if (!aiRes.ok) throw new Error(aiData.error || 'AI generation failed')
@@ -25,7 +25,7 @@ export async function POST(request) {
     let itemId = null
     if (userId && DB_API_URL) {
       try {
-        const dbRes = await fetch(`${DB_API_URL}/db/churnshield/{{ITEM_TABLE}}`, {
+        const dbRes = await fetch(`${DB_API_URL}/db/churnshield/items`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${DB_API_KEY}` },
           body: JSON.stringify({ user_id: userId, result_data: result, status: 'draft', ...inputs })

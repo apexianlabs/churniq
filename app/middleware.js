@@ -10,7 +10,7 @@ export function middleware(request) {
 
   if (hostname === 'app.churnshield.com') {
     if (pathname === '/') {
-      const token = request.cookies.get('chu_token')?.value
+      const token = request.cookies.get('cha_token')?.value
       if (token) {
         return NextResponse.redirect(new URL('/dashboard', request.url))
       } else {

@@ -18,8 +18,8 @@ export default function AuthCallback() {
         .then(data => {
           const user = data?.data
           if (user) {
-            document.cookie = `chu_token=${access_token}; path=/; max-age=2592000; SameSite=Lax`
-            document.cookie = `chu_user=${encodeURIComponent(JSON.stringify({ id: user.id, email: user.email, name: user.full_name || '' }))}; path=/; max-age=2592000; SameSite=Lax`
+            document.cookie = `cha_token=${access_token}; path=/; max-age=2592000; SameSite=Lax`
+            document.cookie = `cha_user=${encodeURIComponent(JSON.stringify({ id: user.id, email: user.email, name: user.full_name || '' }))}; path=/; max-age=2592000; SameSite=Lax`
           }
           router.push('/dashboard')
         })
