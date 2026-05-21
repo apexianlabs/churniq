@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'ChurnShield — AI-powered SaaS retention for founders',
+  title: 'ChurnIQ — AI-powered SaaS retention for founders',
   description: 'AI-powered SaaS retention for founders',
 }
 export default function RootLayout({ children }) {

@@ -55,7 +55,7 @@ export default function BillingPage() {
       <nav style={{background:'#fff',borderBottom:'1px solid #e2e8f0',height:56,display:'flex',alignItems:'center',padding:'0 24px',gap:16}}>
         <Link href="/dashboard" style={{display:'flex',alignItems:'center',gap:8,textDecoration:'none'}}>
           <div style={{width:28,height:28,borderRadius:6,background:'#0891b2',display:'flex',alignItems:'center',justifyContent:'center',fontSize:13,fontWeight:800,color:'#fff'}}>C</div>
-          <span style={{fontWeight:700,color:'#0f172a',fontSize:14}}>ChurnShield</span>
+          <span style={{fontWeight:700,color:'#0f172a',fontSize:14}}>ChurnIQ</span>
         </Link>
         <div style={{flex:1}}/>
         <div style={{display:'flex',gap:4,background:'#f1f5f9',borderRadius:8,padding:3}}>

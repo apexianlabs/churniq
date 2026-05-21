@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 const AI_API_URL = process.env.AI_API_URL
 const AI_API_KEY = process.env.AI_API_KEY
 const DB_API_URL = process.env.DB_API_URL
-const DB_API_KEY = process.env.DB_API_KEY_CHURNSHIELD
+const DB_API_KEY = process.env.DB_API_KEY_CHURNIQ
 
 export async function POST(request) {
   try {
@@ -25,7 +25,7 @@ export async function POST(request) {
     let itemId = null
     if (userId && DB_API_URL) {
       try {
-        const dbRes = await fetch(`${DB_API_URL}/db/churnshield/items`, {
+        const dbRes = await fetch(`${DB_API_URL}/db/churniq/items`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${DB_API_KEY}` },
           body: JSON.stringify({ user_id: userId, result_data: result, status: 'draft', ...inputs })

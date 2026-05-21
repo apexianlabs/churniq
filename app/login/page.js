@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
-const GOOGLE_AUTH_URL = `https://wdeilbhnsdlmckovicqy.supabase.co/auth/v1/authorize?provider=google&redirect_to=https%3A%2F%2Fapp.churnshield.com%2Fauth%2Fcallback&scopes=email+profile`
+const GOOGLE_AUTH_URL = `https://wdeilbhnsdlmckovicqy.supabase.co/auth/v1/authorize?provider=google&redirect_to=https%3A%2F%2Fapp.churniq.app%2Fauth%2Fcallback&scopes=email+profile`
 
 export default function LoginPage() {
   const router = useRouter()
@@ -30,8 +30,8 @@ export default function LoginPage() {
     try {
       const endpoint = tab === 'login' ? '/auth/signin' : '/auth/signup'
       const body = tab === 'login'
-        ? { email: form.email, password: form.password, product: 'churnshield' }
-        : { email: form.email, password: form.password, full_name: form.name, source_product: 'churnshield' }
+        ? { email: form.email, password: form.password, product: 'churniq' }
+        : { email: form.email, password: form.password, full_name: form.name, source_product: 'churniq' }
       const res = await fetch(`${process.env.NEXT_PUBLIC_AUTH_API_URL}${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -58,7 +58,7 @@ export default function LoginPage() {
         fetch(`${process.env.NEXT_PUBLIC_DB_API_URL}/email/welcome`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${process.env.NEXT_PUBLIC_DB_API_KEY}` },
-          body: JSON.stringify({ product: 'churnshield', to: form.email, name: fullName, email: form.email })
+          body: JSON.stringify({ product: 'churniq', to: form.email, name: fullName, email: form.email })
         }).catch(() => {}) // fire and forget
       }
       
@@ -75,7 +75,7 @@ export default function LoginPage() {
       <div style={{position:'absolute',top:-80,right:-60,width:280,height:280,borderRadius:'50%',background:'rgba(255,255,255,0.08)'}}/>
       <Link href="/" style={{display:'flex',alignItems:'center',gap:10,marginBottom:48,zIndex:1,textDecoration:'none'}}>
         <div style={{width:36,height:36,borderRadius:8,background:'rgba(255,255,255,0.2)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:18,fontWeight:800,color:'#fff'}}>C</div>
-        <span style={{fontSize:20,fontWeight:800,color:'#fff'}}>ChurnShield</span>
+        <span style={{fontSize:20,fontWeight:800,color:'#fff'}}>ChurnIQ</span>
       </Link>
       <div style={{zIndex:1,marginBottom:40}}>
         <h1 style={{fontSize:28,fontWeight:800,color:'#fff',lineHeight:1.2,marginBottom:12}}>
@@ -84,7 +84,7 @@ export default function LoginPage() {
         <p style={{fontSize:14,color:'rgba(255,255,255,0.7)',lineHeight:1.6}}>AI-powered SaaS retention for founders</p>
       </div>
       <div style={{zIndex:1,marginTop:'auto',background:'rgba(255,255,255,0.1)',borderRadius:12,padding:20,border:'1px solid rgba(255,255,255,0.15)'}}>
-        <p style={{fontSize:13,color:'rgba(255,255,255,0.9)',lineHeight:1.6,marginBottom:10,fontStyle:'italic'}}>"ChurnShield saves me hours every week."</p>
+        <p style={{fontSize:13,color:'rgba(255,255,255,0.9)',lineHeight:1.6,marginBottom:10,fontStyle:'italic'}}>"ChurnIQ saves me hours every week."</p>
         <p style={{fontSize:12,color:'rgba(255,255,255,0.6)',fontWeight:500}}>— Beta User</p>
       </div>
     </div>
@@ -100,7 +100,7 @@ export default function LoginPage() {
           {isMobile && (
             <Link href="/" style={{display:'flex',alignItems:'center',gap:8,marginBottom:24,textDecoration:'none',justifyContent:'center'}}>
               <div style={{width:32,height:32,borderRadius:8,background:'#0891b2',display:'flex',alignItems:'center',justifyContent:'center',fontSize:14,fontWeight:800,color:'#fff'}}>C</div>
-              <span style={{fontWeight:800,fontSize:18,color:'#0f172a'}}>ChurnShield</span>
+              <span style={{fontWeight:800,fontSize:18,color:'#0f172a'}}>ChurnIQ</span>
             </Link>
           )}
           <div style={{display:'flex',background:'#f1f5f9',borderRadius:10,padding:4,marginBottom:24}}>
@@ -118,7 +118,7 @@ export default function LoginPage() {
             {tab === 'login' ? 'Welcome back' : 'Create your account'}
           </h2>
           <p style={{fontSize:14,color:'#64748b',marginBottom:20}}>
-            {tab === 'login' ? `Sign in to your ChurnShield account.` : 'Start your free trial today.'}
+            {tab === 'login' ? `Sign in to your ChurnIQ account.` : 'Start your free trial today.'}
           </p>
           {error && <div style={{background:'#fef2f2',border:'1px solid #fecaca',borderRadius:8,padding:'10px 14px',fontSize:13,color:'#dc2626',marginBottom:16}}>{error}</div>}
           {tab === 'signup' && (

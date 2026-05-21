@@ -3,7 +3,7 @@ export default function SupportPage() {
   return (
     <div style={{minHeight:'100vh',fontFamily:'Inter,sans-serif',background:'#fff'}}>
       <nav style={{borderBottom:'1px solid #e2e8f0',padding:'16px 24px',display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-        <Link href="/" style={{fontWeight:800,fontSize:16,color:'#0f172a',textDecoration:'none'}}>ChurnShield</Link>
+        <Link href="/" style={{fontWeight:800,fontSize:16,color:'#0f172a',textDecoration:'none'}}>ChurnIQ</Link>
         <Link href="/" style={{fontSize:13,color:'#64748b',textDecoration:'none'}}>← Back</Link>
       </nav>
       <div style={{maxWidth:680,margin:'0 auto',padding:'48px 24px'}}>
@@ -11,11 +11,11 @@ export default function SupportPage() {
         <p style={{fontSize:15,color:'#64748b',marginBottom:32}}>We're here to help. Reach out and we'll get back to you within 24 hours.</p>
         <div style={{background:'#f8fafc',borderRadius:12,padding:24,marginBottom:16,border:'1px solid #e2e8f0'}}>
           <h2 style={{fontSize:15,fontWeight:700,color:'#0f172a',marginBottom:8}}>Contact Support</h2>
-          <p style={{fontSize:13,color:'#475569'}}>Email us at <strong>support@churnshield.com</strong> and we'll respond within 24 hours.</p>
+          <p style={{fontSize:13,color:'#475569'}}>Email us at <strong>support@churniq.app</strong> and we'll respond within 24 hours.</p>
         </div>
         <div style={{background:'#f0f4ff',borderRadius:12,padding:24,border:'1px solid #bfdbfe'}}>
           <h2 style={{fontSize:15,fontWeight:700,color:'#0891b2',marginBottom:8}}>Getting Started</h2>
-          <p style={{fontSize:13,color:'#475569',lineHeight:1.6}}>ChurnShield is designed to be simple. If you run into any issues, our team is ready to help you get the most out of the product.</p>
+          <p style={{fontSize:13,color:'#475569',lineHeight:1.6}}>ChurnIQ is designed to be simple. If you run into any issues, our team is ready to help you get the most out of the product.</p>
         </div>
       </div>
     </div>

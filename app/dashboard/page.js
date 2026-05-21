@@ -71,7 +71,7 @@ export default function DashboardPage() {
         <Link href="/" style={{display:'flex',alignItems:'center',gap:9,textDecoration:'none'}}>
           <div style={{width:28,height:28,borderRadius:7,background:'#0891b2',display:'flex',alignItems:'center',justifyContent:'center',fontSize:13,fontWeight:800,color:'#fff',flexShrink:0}}>C</div>
           <div>
-            <p style={{fontSize:13,fontWeight:800,color:'#fff',lineHeight:1,letterSpacing:'-0.3px'}}>ChurnShield</p>
+            <p style={{fontSize:13,fontWeight:800,color:'#fff',lineHeight:1,letterSpacing:'-0.3px'}}>ChurnIQ</p>
             <p style={{fontSize:10,color:'#475569',lineHeight:1,marginTop:2}}>Stop churn before it starts</p>
           </div>
         </Link>
@@ -151,7 +151,7 @@ export default function DashboardPage() {
           )}
           <div style={{flex:1}}>
             <p style={{fontSize:16,fontWeight:700,color:'#0f172a',letterSpacing:'-0.3px'}}>{greeting()}, {user?.name?.split(' ')[0] || 'there'} 👋</p>
-            <p style={{fontSize:11,color:'#94a3b8',marginTop:1}}>Here's your ChurnShield overview.</p>
+            <p style={{fontSize:11,color:'#94a3b8',marginTop:1}}>Here's your ChurnIQ overview.</p>
           </div>
           <Link href="/generate"
             style={{background:'#0891b2',color:'#fff',padding:'7px 16px',borderRadius:8,fontSize:13,fontWeight:600,textDecoration:'none',letterSpacing:'-0.2px',flexShrink:0}}>
@@ -272,11 +272,11 @@ export default function DashboardPage() {
       </div>
       {/* Footer */}
       <div style={{borderTop:'1px solid #e2e8f0',padding:'14px 28px',display:'flex',alignItems:'center',justifyContent:'space-between',background:'#fff',marginTop:'auto'}}>
-        <span style={{fontSize:11,color:'#94a3b8'}}>© 2026 ChurnShield</span>
+        <span style={{fontSize:11,color:'#94a3b8'}}>© 2026 ChurnIQ</span>
         <div style={{display:'flex',gap:20}}>
-          <a href="https://churnshield.com/privacy" style={{fontSize:11,color:'#94a3b8',textDecoration:'none'}} target="_blank" rel="noreferrer">Privacy</a>
-          <a href="https://churnshield.com/terms" style={{fontSize:11,color:'#94a3b8',textDecoration:'none'}} target="_blank" rel="noreferrer">Terms</a>
-          <a href="https://churnshield.com/support" style={{fontSize:11,color:'#94a3b8',textDecoration:'none'}} target="_blank" rel="noreferrer">Support</a>
+          <a href="https://churniq.app/privacy" style={{fontSize:11,color:'#94a3b8',textDecoration:'none'}} target="_blank" rel="noreferrer">Privacy</a>
+          <a href="https://churniq.app/terms" style={{fontSize:11,color:'#94a3b8',textDecoration:'none'}} target="_blank" rel="noreferrer">Terms</a>
+          <a href="https://churniq.app/support" style={{fontSize:11,color:'#94a3b8',textDecoration:'none'}} target="_blank" rel="noreferrer">Support</a>
         </div>
       </div>
     </div>

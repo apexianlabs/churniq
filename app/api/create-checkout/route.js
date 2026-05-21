@@ -28,7 +28,7 @@ export async function POST(request) {
       'line_items[0][quantity]': '1',
       'subscription_data[trial_period_days]': '14',
       'subscription_data[metadata][user_id]': userId,
-      'subscription_data[metadata][product]': 'churnshield',
+      'subscription_data[metadata][product]': 'churniq',
       'subscription_data[metadata][plan]': plan,
       success_url: `${process.env.NEXT_PUBLIC_APP_URL}/billing?success=1`,
       cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/billing`,

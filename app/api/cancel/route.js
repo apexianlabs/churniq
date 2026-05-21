@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server'
 export async function POST(request) {
   try {
     const { user_id } = await request.json()
-    const subRes = await fetch(`${process.env.DB_API_URL}/db/subscriptions/${user_id}/churnshield`, {
-      headers: { 'Authorization': `Bearer ${process.env.DB_API_KEY_CHURNSHIELD}` }
+    const subRes = await fetch(`${process.env.DB_API_URL}/db/subscriptions/${user_id}/churniq`, {
+      headers: { 'Authorization': `Bearer ${process.env.DB_API_KEY_CHURNIQ}` }
     })
     const subData = await subRes.json()
     const subscriptionId = subData?.data?.stripe_subscription_id

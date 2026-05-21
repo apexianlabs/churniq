@@ -4,8 +4,8 @@ export async function GET(request) {
     const { searchParams } = new URL(request.url)
     const user_id = searchParams.get('user_id')
     if (!user_id) return NextResponse.json({ plan: 'free' })
-    const res = await fetch(`${process.env.DB_API_URL}/db/subscriptions/${user_id}/churnshield`, {
-      headers: { 'Authorization': `Bearer ${process.env.DB_API_KEY_CHURNSHIELD}` }
+    const res = await fetch(`${process.env.DB_API_URL}/db/subscriptions/${user_id}/churniq`, {
+      headers: { 'Authorization': `Bearer ${process.env.DB_API_KEY_CHURNIQ}` }
     })
     if (!res.ok) return NextResponse.json({ plan: 'free' })
     const data = await res.json()

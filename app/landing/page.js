@@ -8,7 +8,7 @@ const FEATURES = [
 ]
 
 const TESTIMONIALS = [
-  { quote: 'ChurnShield saves me at least 3 hours a week. It handles the work I used to dread.', name: 'Sarah K.', role: 'Freelance Designer' },
+  { quote: 'ChurnIQ saves me at least 3 hours a week. It handles the work I used to dread.', name: 'Sarah K.', role: 'Freelance Designer' },
   { quote: 'The quality is remarkable. I customise slightly and it\'s better than what I wrote myself.', name: 'James T.', role: 'Agency Owner' },
   { quote: 'Pays for itself with the first use. I don\'t know how I worked without it.', name: 'Maria L.', role: 'Marketing Consultant' },
 ]
@@ -21,7 +21,7 @@ export default function HomePage() {
       <nav style={{position:'sticky',top:0,zIndex:100,background:'rgba(255,255,255,0.92)',backdropFilter:'blur(12px)',borderBottom:'1px solid rgba(0,0,0,0.06)',padding:'0 24px',height:60,display:'flex',alignItems:'center',justifyContent:'space-between'}}>
         <div style={{display:'flex',alignItems:'center',gap:8}}>
           <div style={{width:30,height:30,borderRadius:8,background:'#0891b2',display:'flex',alignItems:'center',justifyContent:'center',fontSize:14,fontWeight:800,color:'#fff',letterSpacing:'-0.5px'}}>C</div>
-          <span style={{fontWeight:800,fontSize:17,color:'#0f172a',letterSpacing:'-0.3px'}}>ChurnShield</span>
+          <span style={{fontWeight:800,fontSize:17,color:'#0f172a',letterSpacing:'-0.3px'}}>ChurnIQ</span>
         </div>
         <div style={{display:'flex',gap:8,alignItems:'center'}}>
           <Link href="/login" style={{padding:'7px 16px',fontSize:13,color:'#64748b',textDecoration:'none',fontWeight:500,borderRadius:8}}>Sign in</Link>
@@ -59,7 +59,7 @@ export default function HomePage() {
               {['#fca5a5','#fde68a','#86efac'].map(c => <div key={c} style={{width:11,height:11,borderRadius:'50%',background:c}}/>)}
             </div>
             <div style={{flex:1,background:'#fff',borderRadius:6,height:26,margin:'0 12px',display:'flex',alignItems:'center',padding:'0 12px',border:'1px solid #e8ecf0'}}>
-              <span style={{fontSize:11,color:'#94a3b8'}}>app.churnshield.com/generate</span>
+              <span style={{fontSize:11,color:'#94a3b8'}}>app.churniq.app/generate</span>
             </div>
           </div>
           <div style={{padding:'32px',background:'#fff',minHeight:200,display:'flex',alignItems:'center',justifyContent:'center'}}>
@@ -108,7 +108,7 @@ export default function HomePage() {
       {/* Features */}
       <section id="features" style={{padding:'80px 24px',maxWidth:1000,margin:'0 auto'}}>
         <div style={{textAlign:'center',marginBottom:52}}>
-          <p style={{fontSize:11,fontWeight:700,color:'#0891b2',textTransform:'uppercase',letterSpacing:'0.1em',marginBottom:12}}>WHY CHURNSHIELD</p>
+          <p style={{fontSize:11,fontWeight:700,color:'#0891b2',textTransform:'uppercase',letterSpacing:'0.1em',marginBottom:12}}>WHY CHURNIQ</p>
           <h2 style={{fontSize:'clamp(28px,4vw,42px)',fontWeight:800,letterSpacing:'-1px',marginBottom:12,color:'#0f172a'}}>
             Everything you need.<br/>Nothing you don't.
           </h2>
@@ -159,7 +159,7 @@ export default function HomePage() {
           <h2 style={{fontSize:'clamp(28px,4vw,42px)',fontWeight:800,letterSpacing:'-1px',marginBottom:8,color:'#0f172a'}}>
             Start free. Scale when ready.
           </h2>
-          <p style={{fontSize:15,color:'#64748b'}}>One saved hour pays for months of ChurnShield.</p>
+          <p style={{fontSize:15,color:'#64748b'}}>One saved hour pays for months of ChurnIQ.</p>
         </div>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(200px,1fr))',gap:14}}>
           {[
@@ -202,7 +202,7 @@ export default function HomePage() {
           Start saving time today.
         </h2>
         <p style={{fontSize:16,color:'rgba(255,255,255,0.8)',marginBottom:32,maxWidth:400,margin:'0 auto 32px'}}>
-          Join professionals who use ChurnShield to work faster and earn more.
+          Join professionals who use ChurnIQ to work faster and earn more.
         </p>
         <div style={{display:'flex',gap:12,justifyContent:'center',flexWrap:'wrap',marginBottom:16}}>
           <Link href="/signup" style={{padding:'14px 28px',background:'#fff',color:'#0891b2',textDecoration:'none',borderRadius:10,fontWeight:700,fontSize:15,letterSpacing:'-0.2px'}}>
@@ -219,9 +219,9 @@ export default function HomePage() {
       <footer style={{padding:'28px 24px',borderTop:'1px solid #f1f5f9',display:'flex',alignItems:'center',justifyContent:'space-between',flexWrap:'wrap',gap:12,background:'#fff'}}>
         <div style={{display:'flex',alignItems:'center',gap:8}}>
           <div style={{width:22,height:22,borderRadius:5,background:'#0891b2',display:'flex',alignItems:'center',justifyContent:'center',fontSize:10,fontWeight:800,color:'#fff'}}>C</div>
-          <span style={{fontWeight:700,fontSize:13,color:'#0f172a'}}>ChurnShield</span>
+          <span style={{fontWeight:700,fontSize:13,color:'#0f172a'}}>ChurnIQ</span>
         </div>
-        <p style={{fontSize:12,color:'#94a3b8'}}>© {new Date().getFullYear()} ChurnShield. Built on Claude AI.</p>
+        <p style={{fontSize:12,color:'#94a3b8'}}>© {new Date().getFullYear()} ChurnIQ. Built on Claude AI.</p>
         <div style={{display:'flex',gap:20}}>
           {[['Privacy','/privacy'],['Terms','/terms'],['Support','/support']].map(([l,h]) => (
             <a key={l} href={h} style={{fontSize:12,color:'#64748b',textDecoration:'none'}}>{l}</a>

@@ -8,7 +8,7 @@ export function middleware(request) {
     return NextResponse.next()
   }
 
-  if (hostname === 'app.churnshield.com') {
+  if (hostname === 'app.churniq.app') {
     if (pathname === '/') {
       const token = request.cookies.get('cha_token')?.value
       if (token) {
@@ -20,11 +20,11 @@ export function middleware(request) {
     return NextResponse.next()
   }
 
-  if (hostname === 'churnshield.com' || hostname === 'www.churnshield.com') {
+  if (hostname === 'churniq.app' || hostname === 'www.churniq.app') {
     if (pathname.startsWith('/dashboard') || pathname.startsWith('/billing') ||
         pathname.startsWith('/generate') || pathname.startsWith('/login') ||
         pathname.startsWith('/signup')) {
-      return NextResponse.redirect(new URL('https://app.churnshield.com' + pathname, request.url))
+      return NextResponse.redirect(new URL('https://app.churniq.app' + pathname, request.url))
     }
   }
 

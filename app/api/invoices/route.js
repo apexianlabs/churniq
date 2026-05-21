@@ -4,8 +4,8 @@ export async function GET(request) {
     const { searchParams } = new URL(request.url)
     const user_id = searchParams.get('user_id')
     if (!user_id) return NextResponse.json({ invoices: [] })
-    const subRes = await fetch(`${process.env.DB_API_URL}/db/subscriptions/${user_id}/churnshield`, {
-      headers: { 'Authorization': `Bearer ${process.env.DB_API_KEY_CHURNSHIELD}` }
+    const subRes = await fetch(`${process.env.DB_API_URL}/db/subscriptions/${user_id}/churniq`, {
+      headers: { 'Authorization': `Bearer ${process.env.DB_API_KEY_CHURNIQ}` }
     })
     if (!subRes.ok) return NextResponse.json({ invoices: [] })
     const subData = await subRes.json()
@@ -17,7 +17,7 @@ export async function GET(request) {
     const stripeData = await stripeRes.json()
     const invoices = (stripeData.data || []).filter(i => i.status !== 'draft').map(inv => ({
       date: new Date(inv.created * 1000).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}),
-      desc: inv.lines?.data?.[0]?.description || 'ChurnShield subscription',
+      desc: inv.lines?.data?.[0]?.description || 'ChurnIQ subscription',
       amount: `$${(inv.amount_paid/100).toFixed(2)}`,
       status: inv.status === 'paid' ? 'Paid' : inv.status,
       pdf: inv.invoice_pdf
