@@ -3,6 +3,18 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
+const Logo = ({ size = 32 }) => (
+  <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#22d3ee"/><stop offset="100%" stopColor="#0e7490"/></linearGradient></defs>
+    <circle cx="50" cy="50" r="42" fill="url(#lg)"/>
+    <path d="M50 20 C68 20 82 34 82 52 C82 70 68 82 50 82" stroke="white" strokeWidth="5" strokeLinecap="round" fill="none" opacity="0.9"/>
+    <path d="M50 80 C32 80 18 66 18 48 C18 30 32 18 50 18" stroke="white" strokeWidth="5" strokeLinecap="round" fill="none" opacity="0.5"/>
+    <path d="M45 13 L50 20 L57 15" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.9"/>
+    <circle cx="50" cy="50" r="8" fill="white" opacity="0.95"/><circle cx="50" cy="50" r="4" fill="#0891b2"/>
+  </svg>
+)
+
+
 const GOOGLE_AUTH_URL = `https://wdeilbhnsdlmckovicqy.supabase.co/auth/v1/authorize?provider=google&redirect_to=https%3A%2F%2Fapp.churniq.app%2Fauth%2Fcallback&scopes=email+profile`
 
 export default function LoginPage() {
@@ -74,7 +86,7 @@ export default function LoginPage() {
     <div style={{width:420,flexShrink:0,background:'#0891b2',display:'flex',flexDirection:'column',padding:'40px',position:'relative',overflow:'hidden'}}>
       <div style={{position:'absolute',top:-80,right:-60,width:280,height:280,borderRadius:'50%',background:'rgba(255,255,255,0.08)'}}/>
       <Link href="/" style={{display:'flex',alignItems:'center',gap:10,marginBottom:48,zIndex:1,textDecoration:'none'}}>
-        <div style={{width:36,height:36,borderRadius:8,background:'rgba(255,255,255,0.2)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:18,fontWeight:800,color:'#fff'}}>C</div>
+        <Logo size={36}/>
         <span style={{fontSize:20,fontWeight:800,color:'#fff'}}>ChurnIQ</span>
       </Link>
       <div style={{zIndex:1,marginBottom:40}}>
@@ -99,7 +111,7 @@ export default function LoginPage() {
         <div style={{width:'100%',maxWidth:400}}>
           {isMobile && (
             <Link href="/" style={{display:'flex',alignItems:'center',gap:8,marginBottom:24,textDecoration:'none',justifyContent:'center'}}>
-              <div style={{width:32,height:32,borderRadius:8,background:'#0891b2',display:'flex',alignItems:'center',justifyContent:'center',fontSize:14,fontWeight:800,color:'#fff'}}>C</div>
+              <Logo size={36}/>
               <span style={{fontWeight:800,fontSize:18,color:'#0f172a'}}>ChurnIQ</span>
             </Link>
           )}
