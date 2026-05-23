@@ -1,4 +1,5 @@
 export const metadata = {
+  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   title: 'ChurnIQ — AI-powered SaaS retention for founders',
   description: 'AI-powered SaaS retention for founders',
 }
